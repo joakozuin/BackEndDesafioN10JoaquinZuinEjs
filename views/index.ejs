@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= tituloP %></title>
+
+    <!-- <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script> -->
+    
+    <link href="/css/estilos.css" rel="stylesheet" type="text/css" />
+    <link href="/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="/js/mui.min.js"></script>
+
+  </head>
+  <body class="contenedor">
+
+    <div class="mui-container-fluid ">
+        <div class="mui--text-display1  mui--text-center" style="height:50px;margin-top:20px"><%= titulo %></div>
+        <div class="mui-divider"></div>
+        <!-- Listado de Productos -->
+        <div class="mui-row" style="margin-top:20px">
+          <div class="mui-col-md-4"></div>
+          <div class="mui-col-md-4">
+           <h2 class="mui--text-center">Cantidad de producto en el listado:<%= cantidad %></h2>
+
+          
+           <%- include('./partials/tabla'); %>
+            
+          
+            <% if (produHay) { %>
+                <!-- <h3 class="mui--text-center">Cantidad de producto en el listado:<%= cantidad %></h3>   -->
+             <% } else { %>
+                 <h3> Disculpe, no hay productos</h3>
+            <% } %>
+           
+          </div>
+  
+          <div class="mui-col-md-4"></div>
+        </div>
+        
+         <!-- Botón para pasar a otra Pagina -->
+         <div class="mui-row">
+           <div class="mui-col-md-4"></div>
+           <div class="mui-col-md-4"></div>
+           <div class="mui-col-md-4">
+             <form action="http://localhost:8080/">
+               <div class="mui--text-center">
+                <button type="submit" class=" mui-btn mui-btn--raised mui-btn--accent"> Formulario Carga Productos</button>
+              </div>
+             </form>
+           </div>
+
+         </div>
+    </div>
+
+
+  </body>
+</html>
